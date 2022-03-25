@@ -24,4 +24,10 @@ class VoteController extends Controller
 
         return redirect('/');
     }
+
+    public function showVote($id){
+        $vote = Vote::find($id);
+
+        return view('show_vote', ['vote' => $vote]);
+    }
 }
