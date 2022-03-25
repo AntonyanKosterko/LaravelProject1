@@ -34,6 +34,8 @@
 		<div class="container">
 			<h1>Текущие голосования</h1>
 			<hr class="mb-5">
+
+			@foreach($votes as $vote)
 			
 			<!-- НАЧАЛО: Карточка голосования ------------------------------------->
 			<div class="card border-info mb-4">
@@ -41,7 +43,7 @@
 				<div class="card-header border-info">
 					<h5 class="card-title mb-0">
 						<a href="#">
-							Уточек программистам
+							{{ $vote['title'] }}
 						</a>
 					</h5>
 				</div>
@@ -50,25 +52,26 @@
 				<div class="card-body">
 					<!-- Текст описания -->
 					<p class="card-text mb-4">
-						Предлагаю раздавать программистам резиновых уточек бесплатно! Это в разы поднимет качество разрабатываемого ПО во всем мире.
+					{{ $vote['text'] }}
 					</p>
 					<!-- Кнопки голосования -->
 					<a href="#" class="btn btn-outline-success mr-3">
 						<i class="fa fa-thumbs-o-up" aria-hidden="true"></i> Я за!
 						<span class="badge badge-pill badge-success">
-							12
+						{{ $vote['positive'] }}
 						</span>
 					</a>
 					<a href="#" class="btn btn-outline-danger mr-3">
 						<i class="fa fa-thumbs-o-down" aria-hidden="true"></i> Я против!
 						<span class="badge badge-pill badge-danger">
-							3
+						{{ $vote['negative'] }}
 						</span>
 					</a>
 				</div>
 				<!-- КОНЕЦ: Тело карточки -->
 			</div>
 			<!-- КОНЕЦ: Карточка голосования -------------------------------------->
+			@endforeach
 
 		</div>
 	</main>
