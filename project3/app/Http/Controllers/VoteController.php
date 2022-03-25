@@ -13,4 +13,15 @@ class VoteController extends Controller
 
         return view('index', ['votes' => $votes]);
     }
+
+    public function create(Request $request){
+        $vote = new Vote();
+        $vote->title = $request->title;
+        $vote->text = $request->text;
+        $vote->positive = 0;
+        $vote->negative = 0;
+        $vote->save();
+
+        return redirect('/');
+    }
 }

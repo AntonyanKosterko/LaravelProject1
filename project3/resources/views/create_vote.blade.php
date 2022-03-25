@@ -60,6 +60,7 @@
 					<label>Текст описания</label>
 					<textarea class="form-control" rows="5" name="text"></textarea>
 				</div>
+				{{ csrf_field() }}
 				<button type="submit" class="btn btn-outline-success">Открыть голосование</button>
 			</form>
 
