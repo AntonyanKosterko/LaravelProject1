@@ -9,7 +9,7 @@ class VoteController extends Controller
 {
     public function showAll(){
         $vote = new Vote();
-        $votes = $vote->all();
+        $votes = $vote->paginate(5);
 
         return view('index', ['votes' => $votes]);
     }
